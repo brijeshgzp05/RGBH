@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %} Rooms | {{block.super}} {% endblock title %}
+{% block content %}
+<br><br>
+<center><h1 style="font-size: 4vw;color:#A93226;font-family:cursive;">Rooms List</h1></center><br>
+<div class="container">
+		
+	<div>
+		{% include 'messages_display.html' %}
+		{% if rooms %}
+		<table class="table" id="behind">
+			<thead>
+			<tr>
+				<th>Room No.</th>
+				<th>Room Type</th>
+				
+				<th>Fully Allocated</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			{% for r in rooms %}
+			<tr>
+				<td><a href="{{ r.get_absolute_url }}">{{r.roomno}}</a></td>
+				<td>{{r.room_type}}</td>
+				
+				<td>{% if r.fully_allocated %}<p class="yes"><b>Yes</b></p>{% else %}<p class="no"><b>No</b></p>{% endif %}</td>
+			
+			</tr>
+			{% endfor %}
+		</tbody>
+		</table>
+			
+		{% else %}
+		No Rooms added
+		{% endif %}
+		{% if user.is_authenticated %}
+		<center>
+		<a href="/admin/room/room/" class="btn btn-info" style="color:red;"><b>Manage Rooms</b></a>
+		</center>
+		{% endif %}
+<br><center>
+		
+	</center>
+	</div>
+</div>
+
+<style type="text/css">
+td{
+		color:white;
+		font-size: 18px;
+	}
+	.yes{
+		color:green;
+	}
+	.no{
+		color:red;
+	}
+	th{
+		color:orange;
+		font-size: 20px;
+		font-family: cursive;
+	}
+	 #behind{
+
+            background-color:black;
+            color:white;
+    }
+</style>
+{% endblock content %}

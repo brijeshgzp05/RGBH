@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %} Students | {{block.super}} {% endblock title %}
+{% block content %}
+<br><br>
+<center><h1 style="font-size: 4vw;color:black;font-family:cursive;">{{title}}</h1></center><br>
+
+
+<div class="container">
+		
+	<div>
+		{% include 'messages_display.html' %}
+		{% if obj_list %}
+
+			<table class="table" id="behind">
+				<tr>
+					<th><b>Name</b></th>
+					<th ><b>Roll No</b></th>
+					<th><b>Pending Fees</b></th>
+					<th><b>Mobile</b></th>
+				</tr>
+				{% for instance in obj_list %}
+					<tr>
+						<td><a class="anch" href="{{ instance.get_absolute_url }}">{{instance.name}}</a></td>
+
+						<td>{{instance.rollno}}</td>
+						<td>{{instance.pending_fees}}</td>
+						<td>{{instance.mobile}}</td>
+
+					</tr>
+				{% endfor %}
+			</table>
+
+			<div class="pagination pagination_">
+			    <span class="step-links">
+			        {% if obj_list.has_previous %}
+			            <a href="?page={{ obj_list.previous_page_number }}">previous</a>
+			        {% endif %}
+
+			        <span class="current">
+			            Page {{ obj_list.number }} of {{ obj_list.paginator.num_pages }}.
+			        </span>
+
+			        {% if obj_list.has_next %}
+			            <a href="?page={{ obj_list.next_page_number }}">next</a>
+			        {% endif %}
+			    </span>
+			</div>
+
+		{% else %} 
+			No students added yet.
+		{% endif %}
+	</div>
+</div>
+<style type="text/css">
+	    #behind{
+
+            background-color:#626567;
+            color:white;
+    }
+    th{
+    	color:orange;
+    	font-size: 20px;
+    }
+    .anch{
+    	font-size:18px;
+    }
+    tr{
+    	width:100px;
+    }
+    .pagination_{
+    	color:white;
+    }
+</style>
+{% endblock content %}

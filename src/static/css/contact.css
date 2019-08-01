@@ -1,0 +1,66 @@
+.map iframe {
+    width: 100%;
+    min-height: 400px;
+    position: relative;
+    display: inherit;
+}
+
+.map {
+    position: relative;
+}
+.contact-img img {
+    max-width: 100%;
+    height: auto;
+    border: 10px solid #f9f9f9;
+    padding: 10px;
+  background: #00a6d6;
+}
+.agileinfo_mail_grid_right input[type="text"],
+.agileinfo_mail_grid_right input[type="email"],
+.agileinfo_mail_grid_right textarea {
+    outline: none;
+    padding: 14px 24px;
+    font-size: 15px;
+    border-radius: 35px;
+    letter-spacing: 1px;
+    color: #555;
+    background: #f9f9f9 !important;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #E6E6E6 !important;
+}
+
+.agileinfo_mail_grid_right textarea {
+    min-height: 200px;
+    width: 100%;
+    resize: none;
+}
+
+.agileinfo_mail_grid_right input[type="submit"],
+.agileinfo_mail_grid_right input[type="reset"] {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    transition: 0.5s all;
+     background: #00a6d6;
+    border-radius: 35px;
+    color: #fff;
+    font-size: 17px;
+    letter-spacing: 1px;
+    padding: 10px 30px;
+    display: inline-block;
+}
+
+.agileinfo_mail_grid_right input[type="submit"]:hover,
+.agileinfo_mail_grid_right input[type="reset"]:hover {
+    background: #212121;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    transition: 0.5s all;
+}

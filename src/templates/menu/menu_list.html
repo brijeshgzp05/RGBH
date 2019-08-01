@@ -1,0 +1,47 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} Menu | {{block.super}} {% endblock title %}
+{% block head_extra %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/menulist.css' %}">
+{% endblock head_extra %}
+{% block content %}
+<br><br><br>
+<center><h1 class="heading-menu">Menu List</h1></center><br>
+<div class="container">
+		
+	<div>
+		{% if menu %}
+		<table class="table table-sm table-responsive">
+			
+			<tr>
+				<th>Day</th>
+				<th>Breakfast</th>
+				<th>Lunch</th>
+				<th>Evening</th>
+				<th>Dinner</th>
+				<th>Last Updated</th>
+			</tr>
+			{% for m in menu %}
+			<tr>
+				<td class="menu">{{m.day}}</td>
+				<td>{{m.breakfast}}</td>
+				<td>{{m.lunch}}</td>
+				<td>{{m.evening}}</td>
+				<td>{{m.dinner}}</td>
+				<td>{{m.updated}}</td>
+				{% if user.is_authenticated %}
+		        <td>
+		        	<a href="{% url 'menu:update' id=m.id %}"><small>Edit</small></a>
+		        </td>
+		        {% endif %}
+			</tr>
+			{% endfor %}
+		</table>
+		{% endif %}
+		<hr>
+
+	</div>
+</div>
+
+{% endblock content %}

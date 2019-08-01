@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %} Staff | {{block.super}} {% endblock title %}
+{% block content %}
+<br><br><br>
+<center><h1 style="font-size: 4vw;color:red;font-family:cursive;">Staff List</h1></center><br>
+<div class="container">
+		
+	<div>
+		{% if staff %}
+		<table class="table">
+			
+			<tr>
+				<th>Name</th>
+				<th>Post</th>
+				<th>Salary(Rs.)</th>
+				<th>Joined</th>
+				<th>Mobile</th>
+				<th>Email</th>
+				<th>Address</th>
+				
+			</tr>
+			{% for s in staff %}
+			<tr>
+				<td>{{s.name}}</td>
+				<td>{{s.post}}</td>
+				<td>{{s.salary}}</td>
+				<td>{{s.timestamp}}</td>
+				<td>{{s.mobile}}</td>
+				<td>{{s.email}}</td>
+				<td>{{s.address}}</td>
+
+			</tr>
+			{% endfor %}
+		</table>
+			
+		{% else %}
+		No staff added
+		{% endif %}
+<br><center>
+		{% if user.is_authenticated %}
+		<a href="/admin/staff/staff/" class="btn btn-info" style="color:red;"><b>Manage Staff</b></a>
+		{% endif %}
+	</center>
+	</div>
+</div>
+<style type="text/css">
+	th{
+		color:orange;
+		font-size:20px;
+	}
+	td{
+		color:black;
+		font-size:18px;
+		}
+</style>
+{% endblock content %}

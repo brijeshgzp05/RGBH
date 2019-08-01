@@ -1,0 +1,18 @@
+th{
+		color:orange;
+		font-size: 20px;
+	}
+	td{
+		color:black;
+		font-size:18px;
+	}
+	.menu{
+		color:red;
+	}
+
+
+.heading-menu{
+	font-size: 4vw;
+	color:aquamarine;
+	font-family:tahoma;
+}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} Room Add | {{block.super}} {% endblock title %}
+
+{% block content %}
+<div class="container">
+		
+	<div class="col-md-4 offset-md-4 col-lg-4 offset-lg-4 col-sm-10 offset-sm-1">
+		<br><br>
+		<center><h1 class="tle">Add Room</h1><br><br></center>
+		<form action="." method='post'>
+			{% csrf_token %}
+			{{form.as_p|safe }}
+			<center>
+			<button type="submit" class="btn btn-success">Add</button>
+			<button type="reset" class="btn btn-info">Clear</button></center>
+ 		</form>
+	</div>
+</div>
+<br><hr>
+<style type="text/css">
+body{
+	color:red;
+}
+label{
+	color:orange;
+	font-size:20px;
+}
+.tle{
+	color:#FF5733;
+	font-size:4vw;
+	margin-top: 10%;
+}
+
+
+</style>
+{% endblock content %}

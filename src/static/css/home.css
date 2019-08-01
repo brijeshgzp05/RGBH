@@ -1,0 +1,13 @@
+.container1{
+  width:50%;
+  
+}
+.grow { 
+  width:90px;
+  transition: all .7s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+#rgbh-text .rgbh{
+	font-size: 80px;
+	font-family: tahoma;
+}

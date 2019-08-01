@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} Home | {{block.super}} {% endblock title %}
+{% block head_extra %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+{% endblock head_extra %}
+{% block content %}
+<br><br><br>
+<div class="container-fluid container1">
+        <center>
+         {% include 'fgiettitle.html' %} <br>
+        <img class="grow img-responsive" src="{% static 'images/fgiet_logo.png' %}">
+        <img class="grow grow-size" src="{% static 'images/aktu.gif' %}">
+        <img class="grow" src="{% static 'images/csi_logo.png' %}">
+        <div class="row" id="rgbh-text">
+    
+              <h1 class="awesome rgbh"><b>RAJIV GANDHI BOYS HOSTEL</b></h1>
+           
+            
+        </div>
+        </center>
+</div>        
+
+<div class="banner">
+  <div class="layer">
+    <div class="container">
+      <div class="banner-text-agile">
+        <div class="row">
+          <div class="col-lg-7 p-0">
+            <!-- Carousel -->
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <h3 class="b-w3ltxt text-capitalize mt-md-4">
+                    <span>Welcome to RGBH</span>D.K.Tiwari</h3>
+                  <p class="my-3">onec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus semper Nullam dui mi.
+                   Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis luctus lectus.
+                   Morbi at dui nisl.</p>
+                  <a class="btn btn-banner mt-md-3 mt-2 text-capitalize" href="services.html" role="button">Read More</a>
+                </div>
+                <!-- slider text -->
+                <div class="carousel-item">
+                  <h3 class="b-w3ltxt text-capitalize mt-md-4">
+                    <span>physical activity enhances  </span>positive energy</h3>
+                  <p class="my-3">onec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus semper Nullam dui mi.
+                   Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis luctus lectus.
+                   Morbi at dui nisl.</p>
+                  <a class="btn btn-banner mt-md-3 mt-2 text-capitalize" href="services.html" role="button">Read More</a>
+                </div>
+                <!-- slider text -->
+                <div class="carousel-item text-white">
+                  <h3 class="b-w3ltxt  text-capitalize mt-md-4">
+                    <span> best activities for health are</span>  pumping</h3>
+                  <p class="my-3">onec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus semper Nullam dui mi.
+                   Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis luctus lectus.
+                   Morbi at dui nisl.</p>
+                  <a class="btn btn-banner mt-md-3 mt-2 text-capitalize" href="services.html" role="button">Read More</a>
+                </div>
+                <!-- slider text -->
+              </div>
+            </div>
+            <!-- Carousel -->
+          </div>
+          <div class="col-md-5">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="blog py-5">
+  <div class="container py-md-5 py-3">
+<!--     <h4 class="heading text-center">Room View</h4> -->
+    <h3 class="heading text-center mb-5">Room Tour </h3>
+    <div class="row blog-grids">
+      <div class="col-lg-7 mb-lg-5 blog-img1">
+        <img src="{% static 'images/room1.jpg' %}" alt="" class="img-fluid"/>
+      <!--   <a href="single.html">Blog #1</a> -->
+      </div>
+      <div class="col-lg-5 mb-5">
+        <h5></h5>
+        <h4 class="my-3">Nullam dui mi, vulputate ac</h4>
+        <p class="my-3">onec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus semper Nullam dui mi.
+         Vestibulum ante ipsum primis in faucibus orci luctus et ultrices morbi posuere cubilia Curae; Curabitur quis luctus lectus.</p>
+        <a href="single.html" class="btn-banner"> View Post </a>
+      </div>
+      <div class="col-lg-5 mb-lg-0 mb-4">
+        <h5></h5>
+        <h4 class="my-3">Nullam dui mi, vulputate ac</h4>
+        <p class="my-3">onec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus semper Nullam dui mi.
+         Vestibulum ante ipsum primis in faucibus orci luctus et ultrices morbi posuere cubilia Curae; Curabitur quis luctus lectus.</p>
+        <a href="single.html" class="btn-banner"> View Post </a>
+      </div>
+      <div class="col-lg-7 blog-img2">
+        <img src="{% static 'images/room2.jpg' %}" alt="" class="img-fluid"/>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+<!-- Developer Corner -->
+
+<section class="trainers py-5">
+  <div class="container py-md-3">
+    <h3 class="heading text-center">Developer Corner</h3>
+    <!-- <h3 class="heading text-center mb-5">D </h3> -->
+     <div class="row team_grids mt-5">
+      <div class="col-lg-3 col-sm-6">
+        <div class="team-member">
+          <div class="team-img">
+            <img src="{% static 'images/t10.jpg' %}" alt="team member" class="img-fluid">
+          </div> 
+          <div class="team-hover">
+            <div class="desk">
+              <h4>Skills:</h4>
+              <p>Jquery+Python+Django</p>
+            </div>
+            <div class="s-link">
+           <a href="#" class="button-footr"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="button-footr"><i class="fab  fa fa-twitter"></i></a>
+             <a href="#" class="button-footr"><i class="fab fa fa-google-plus"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>Brijesh Kushwaha</h5>
+          <span>FrontEnd + BackEnd </span>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 my-sm-0 mt-5">
+        <div class="team-member">
+          <div class="team-img">
+            <img src="{% static 'images/t4.jpg' %}" alt="team member" class="img-fluid">
+          </div>
+          <div class="team-hover">
+            <div class="desk">
+              <h4>Skills:</h4>
+              <p>Python+Django</p>
+            </div>
+            <div class="s-link">
+            <a href="#" class="button-footr"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="button-footr"><i class="fab  fa fa-twitter"></i></a>
+             <a href="#" class="button-footr"><i class="fab fa fa-google-plus"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>Kishan Yadav</h5>
+          <span>FrontEnd + BackEnd</span>
+         
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 mx-auto my-lg-0 mt-5">
+        <div class="team-member">
+          <div class="team-img">
+            <img src="{% static 'images/t14.jpg' %}" alt="team member" class="img-fluid">
+          </div>
+          <div class="team-hover">
+            <div class="desk">
+              <h4>Skills:</h4>
+              <p>Python+Django</p>
+            </div>
+            <div class="s-link">
+              <a href="#" class="button-footr"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="button-footr"><i class="fa fa-twitter"></i></a>
+             <a href="#" class="button-footr"><i class="fa fa-google-plus"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>Ajay Kumar(AJJU)</h5>
+          <span>FrontEnd + BackEnd</span>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 mx-auto my-lg-0 mt-5">
+        <div class="team-member">
+          <div class="team-img">
+            <img src="{% static 'images/t2.jpg' %}" alt="team member" class="img-fluid">
+          </div>
+          <div class="team-hover">
+            <div class="desk">
+              <h4>Skills:</h4>
+              <p>Python+Django</p>
+            </div>
+            <div class="s-link">
+            <a href="#" class="button-footr"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="button-footr"><i class="fab  fa fa-twitter"></i></a>
+             <a href="#" class="button-footr"><i class="fab fa fa-google-plus"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>DevendraThakur(DEVU)</h5>
+          <span>FrontEnd + BackEnd</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+
+<style>
+.banner{
+    background:url("{% static 'images/hostel2.jpeg' %}");
+    background-repeat:no-repeat;
+    height:100%;
+    width:100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+
+}
+
+
+</style>
+
+{% endblock content %}
+

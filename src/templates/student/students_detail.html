@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block title %} Details | {{block.super}} {% endblock title %}
+{% block content %}
+<br><br>
+<center><h1 id="hr1">Student Details</h1></center><br>
+
+<div class="container">
+		
+	<div>
+		<table class="table offset-ml-3">
+			<tr>
+				<th>Name</th>
+				<td>{{instance.name}}</td>
+			</tr>
+
+			<tr>
+				<th>Roll No.</th>
+				<td>{{instance.rollno}}</td>
+			</tr>
+
+			<tr>
+				<th>Date Of Birth</th>
+				<td>{{instance.dob}}</td>
+			</tr>
+
+			<tr>
+				<th>Gender</th>
+				<td>{{instance.gender}}</td>
+			</tr>
+
+			<tr>
+				<th>Branch</th>
+				<td>{{instance.branch}}</td>
+			</tr>
+
+			<tr>
+				<th>Year</th>
+				<td>{{instance.year}}</td>
+			</tr>
+
+			<tr>
+				<th>Registered on</th>
+				<td>{{instance.timestamp}}</td>
+			</tr>
+
+			<tr>
+				<th>Last updated</th>
+				<td>{{instance.updated}}</td>
+			</tr>
+
+			<tr>
+				<th>Mobile No.</th>
+				<td>{{instance.mobile}}</td>
+			</tr>
+
+			<tr>
+				<th>Email</th>
+				<td>{{instance.email}}</td>
+			</tr>
+
+			<tr>
+				<th>Address</th>
+				<td>{{instance.address}}</td>
+			</tr>
+
+			<tr>
+				<th>Fees Paid</th>
+				<td>{{instance.fees_paid}}</td>
+			</tr>
+
+			<tr>
+				<th>Fully_paid</th>
+				<td>{% if instance.fully_paid %}<p class="yes"><b>Yes</b></p>{% else %}<p class="no"><b>No</b></p>{% endif %}</td>
+			</tr>
+
+			<tr>
+				<th>Room No.</th>
+				<td>{{instance.roomno}}</td>
+			</tr>
+
+			<tr>
+				<th>Bed No.</th>
+				<td>{{instance.bedno}}</td>
+			</tr>
+		</table>
+		<hr>
+		{% if user.is_authenticated %}
+		<center>
+			<a href="{% url 'students:edit' slug=instance.slug %}" class="btn btn-warning">Edit details</a>
+			<a href="{% url 'students:delete' slug=instance.slug %}" class="btn btn-danger">Delete</a>
+			<br><br>
+		</center>
+		{% endif %}
+	</div>
+</div>
+
+<style type="text/css">
+	#hr1{
+		font-size: 4vw;
+		color:black;
+		font-family:sans-serif;
+	}
+
+	td{
+		color:black;
+		font-size: 18px;
+	}
+	.yes{
+		color:green;
+	}
+	.no{
+		color:red;
+	}
+	th{
+		color:red;
+		font-size: 20px;
+		font-family: cursive;
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('td').each(function(){
+			$(this).addClass('col-md-4');
+		});
+		
+	})
+</script>
+
+{% endblock content %}

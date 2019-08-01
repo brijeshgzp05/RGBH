@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block title %} Register | {{block.super}} {% endblock title %}
+
+{% block content %}
+<br><br>
+<center><h1 style="font-size: 4vw;color:black;font-family:sans-serif;">Student Registration</h1></center><br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 offset-md-3 ">
+				<p id="msg">{{msg}}</p>
+				<form method="post" action=".">{% csrf_token %}
+
+					{{ form.as_p }}
+					<center>
+					<button type="submit" class="btn btn-success" id="send">Save</button>
+					<button type="reset" class="btn btn-primary">Clear</button><br><br>
+				</center>
+					
+
+				</form>
+			
+		</div>
+		<div class="col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2 col-sm-10 col-sm-offset-1">
+			
+				<h1 id="heading">Available Rooms</h1>
+				<div id="room_container">
+					<ul class="list-unstyled">
+						{% for r in rooms %}
+							<li class="roomno_">{{ r.roomno }} {{ r.room_type }}</li>
+							
+						{% endfor %}
+					</ul>
+				</div>
+			
+		</div>
+	</div>
+</div>
+<style type="text/css">
+	body{
+	color:red;
+}
+	label{
+		color:orange;
+		font-size:20px;
+		font-family: cursive;
+	}
+	#heading{
+		color:white;
+		font-family: cursive;
+		font-size: 22px;
+	}
+	#room_container{
+		text-align: center;
+		border:1px solid magenta;
+		border-radius:5px;
+		background:#3498DB;
+		color:black;
+		height:400px;
+		width:150px;
+		overflow-y: scroll;
+	}
+	.roomno_{
+		color:black;
+	}
+	#msg{
+		color:red;
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var mySavebtn = $('#send');
+		var myLabel = $('label[for="id_roomno"]');
+		var myLabelText = myLabel.text();
+		var box = $('#id_roomno');
+		myLabel.text(myLabelText + '(Not selected)');
+		box.val('');
+		mySavebtn.attr('disabled','disabled');
+		var r_ = []
+		{% for r in rooms %}
+			r_.push("{{ r.roomno }}");
+		{% endfor %}
+		
+		box.keyup(checkfunc);
+		function checkfunc(){
+			
+			mySavebtn.removeAttr('disabled');
+			mySavebtn.attr('disabled','disabled');
+			text_written = box.val();
+			index = $.inArray(text_written, r_);
+			if(index>-1){
+				mySavebtn.removeAttr('disabled');
+				myLabel.text(myLabelText);
+			}
+			else{
+				myLabel.text(myLabelText + '(Not available)');
+			}
+			
+		}
+	});
+</script>
+
+{% endblock content %}

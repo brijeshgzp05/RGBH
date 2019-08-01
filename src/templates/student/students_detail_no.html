@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %} Details | {{block.super}} {% endblock title %}
+{% block content %}
+<br><br>
+<center><h1 style="font-size: 4vw;color:aquamarine;font-family:cursive;">Sorry, Student Does Not Exist</h1><br><br>
+<a href="{% url 'students:add' %}" class="btn btn-primary">Add more students</a></li>
+
+<br>
+</center>
+
+
+
+
+
+<style type="text/css">
+	td{
+		color:white;
+		font-size: 18px;
+	}
+	.yes{
+		color:green;
+	}
+	.no{
+		color:red;
+	}
+	th{
+		color:orange;
+		font-size: 20px;
+		font-family: cursive;
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('td').each(function(){
+			$(this).addClass('col-md-4');
+		});
+		
+	})
+</script>
+
+{% endblock content %}
